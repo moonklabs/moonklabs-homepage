@@ -63,8 +63,8 @@ export default function Home() {
         <Navigation />
         <Hero />
         <Marquee />
-        <JangsawangSection />
         <SprintableSection />
+        <JangsawangSection />
         <FAQSection />
         <CTASection />
         <Footer />
