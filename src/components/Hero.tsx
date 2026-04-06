@@ -1,20 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { serviceList } from "@/app/site-config";
 
 const lineVariant = {
   hidden: { y: 40, opacity: 0 },
   visible: (i: number) => ({
     y: 0,
     opacity: 1,
-    transition: { delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+    transition: {
+      delay: i * 0.12,
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
   }),
 };
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16 px-6 border-b border-white/10">
-      {/* Decorative background — grid + violet orb */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-0">
         <div
           className="absolute inset-0 opacity-[0.18]"
@@ -54,7 +58,6 @@ export default function Hero() {
         />
       </div>
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-5 gap-12 items-center relative z-10">
-        {/* Left: 60% */}
         <div className="lg:col-span-3 space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -70,35 +73,59 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <div className="hero-title text-white overflow-hidden">
-            {["에이전트가", "팀이 되는", "엔지니어링을", "설계합니다"].map((line, i) => (
-              <div key={i} className="overflow-hidden">
-                <motion.div
-                  custom={i}
-                  variants={lineVariant}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {line}
-                </motion.div>
-              </div>
-            ))}
-          </div>
+          <h1 className="hero-title text-white overflow-hidden">
+            {["기업을 위한", "AI 에이전트 · LLM", "엔지니어링 시스템을", "설계·구축합니다"].map(
+              (line, i) => (
+                <div key={line} className="overflow-hidden">
+                  <motion.span
+                    custom={i}
+                    variants={lineVariant}
+                    initial="hidden"
+                    animate="visible"
+                    className="block"
+                  >
+                    {line}
+                  </motion.span>
+                </div>
+              ),
+            )}
+          </h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="space-y-1"
+            className="space-y-4 max-w-3xl"
           >
-            <p className="text-zinc-400 text-base">LLM · 에이전틱 시스템 · 내부 툴링.</p>
-            <p className="text-zinc-400 text-base">중견·대기업·투자사 파트너를 위한 AI 네이티브 엔지니어링 스튜디오.</p>
+            <p className="text-zinc-200 text-lg leading-relaxed">
+              뭉클랩은 <strong>중견기업·대기업·투자사</strong>를 위한 AI 네이티브 엔지니어링
+              스튜디오입니다. <strong>기업용 AI 에이전트, LLM 시스템, MCP 기반 내부 툴링</strong>을
+              설계·구축·운영합니다.
+            </p>
+            <p className="text-zinc-400 text-base leading-relaxed">
+              데모용 챗봇보다 실제 운영 환경에 연결되는 시스템을 우선합니다. 데이터 파이프라인,
+              평가 하네스, 권한 제어, 관측성까지 포함해 배포 가능한 형태로 설계합니다.
+            </p>
           </motion.div>
+
+          <motion.ul
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.72, duration: 0.5 }}
+            className="grid gap-2 text-sm text-zinc-400"
+          >
+            {serviceList.map((item) => (
+              <li key={item} className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </motion.ul>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75, duration: 0.5 }}
+            transition={{ delay: 0.82, duration: 0.5 }}
             className="space-y-3"
           >
             <div className="flex flex-wrap gap-3">
@@ -107,6 +134,12 @@ export default function Hero() {
                 className="px-6 py-3 text-sm font-medium tracking-wide text-black bg-white hover:bg-zinc-100 transition-colors"
               >
                 문의하기
+              </a>
+              <a
+                href="#faq-heading"
+                className="px-6 py-3 text-sm font-medium tracking-wide text-white border border-white/20 hover:border-white/50 transition-colors"
+              >
+                FAQ 보기
               </a>
               <a
                 href="https://github.com/moonklabs"
@@ -120,7 +153,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: 40% — AI Chat Mock */}
         <motion.div
           className="lg:col-span-2"
           initial={{ opacity: 0, x: 40 }}
@@ -134,7 +166,6 @@ export default function Hero() {
               border: "1px solid rgba(255,255,255,0.1)",
             }}
           >
-            {/* Header */}
             <div
               className="flex items-center gap-2 px-4 py-3"
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
@@ -148,7 +179,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Body */}
             <div className="p-4 space-y-4 text-xs font-mono">
               <div className="space-y-2">
                 <div className="text-zinc-500 text-[10px] tracking-widest">2026.04.06 · AGENT RUN</div>
@@ -166,10 +196,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div
-                className="h-px"
-                style={{ background: "rgba(255,255,255,0.06)" }}
-              />
+              <div className="h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
 
               <div
                 className="p-3 space-y-1"
@@ -184,8 +211,8 @@ export default function Hero() {
 
               <div className="space-y-1.5">
                 <div className="text-zinc-600 text-[10px] tracking-widest">실행 대기</div>
-                {["벡터 인덱스 재구축", "주간 리포트 합성", "MCP 툴 상태 점검"].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-zinc-500">
+                {["벡터 인덱스 재구축", "주간 리포트 합성", "MCP 툴 상태 점검"].map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-zinc-500">
                     <div className="w-1 h-1 rounded-full bg-zinc-700" />
                     {item}
                   </div>

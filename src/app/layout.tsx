@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import {
+  contactEmail,
+  siteDescription,
+  siteName,
+  siteTitle,
+  siteUrl,
+} from "@/app/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,42 +20,75 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const socialImage = `${siteUrl}/opengraph-image`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  alternateName: "Moonklabs",
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.ico`,
+  email: contactEmail,
+  sameAs: ["https://github.com/moonklabs"],
+  description: siteDescription,
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  alternateName: "Moonklabs",
+  url: siteUrl,
+  description: siteDescription,
+  inLanguage: "ko-KR",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moonklabs.com"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "뭉클랩 — AI 네이티브 엔지니어링 스튜디오",
+    default: siteTitle,
     template: "%s — 뭉클랩",
   },
-  description:
-    "에이전트 시대의 프로덕트를 설계하고 구축합니다. LLM·에이전틱 시스템·내부 툴링 전문 엔지니어링 스튜디오. 중견·대기업·투자사 문의 환영.",
+  description: siteDescription,
+  applicationName: siteName,
+  category: "technology",
+  creator: siteName,
+  publisher: siteName,
   keywords: [
-    "AI Agent",
-    "LLM",
-    "Agentic Systems",
-    "MCP",
-    "RAG",
-    "Enterprise AI",
-    "엔지니어링 스튜디오",
+    "AI 에이전트 개발",
+    "기업용 AI 에이전트",
+    "LLM 시스템 구축",
+    "MCP 내부 툴링",
+    "엔터프라이즈 AI",
+    "AI engineering studio",
     "뭉클랩",
     "Moonklabs",
   ],
+  alternates: { canonical: siteUrl },
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://moonklabs.com",
-    siteName: "뭉클랩",
-    title: "뭉클랩 — AI 네이티브 엔지니어링 스튜디오",
-    description:
-      "에이전트 시대의 프로덕트를 설계하고 구축합니다. 엔터프라이즈·투자 문의 환영.",
+    url: siteUrl,
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: siteTitle,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "뭉클랩 — AI 네이티브 엔지니어링 스튜디오",
-    description:
-      "에이전트 시대의 프로덕트를 설계하고 구축합니다.",
+    title: siteTitle,
+    description: siteDescription,
+    images: [socialImage],
   },
-  robots: { index: true, follow: true },
-  alternates: { canonical: "https://moonklabs.com" },
 };
 
 export const viewport = {
@@ -65,7 +106,21 @@ export default function RootLayout({
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black">{children}</body>
+      <body className="min-h-full flex flex-col bg-black">
+        <Script
+          id="schema-organization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

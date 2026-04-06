@@ -3,6 +3,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+const outcomes = [
+  "멀티 채널 정산·광고·이상 거래 흐름을 하나의 에이전트 루프로 통합",
+  "운영팀이 여러 백오피스를 오가며 하던 수작업 검토를 자동화 중심 흐름으로 재설계",
+  "휴먼 승인 단계를 남겨 엔터프라이즈 환경에서 필요한 통제 가능성을 유지",
+];
+
 export default function JangsawangSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -14,7 +20,6 @@ export default function JangsawangSection() {
       className="relative py-32 px-6 overflow-hidden"
       style={{ background: "#000", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
     >
-      {/* Background ghost text */}
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 select-none pointer-events-none font-black leading-none"
         style={{
@@ -29,35 +34,60 @@ export default function JangsawangSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left label */}
           <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-xs text-violet-400 tracking-widest">CASE STUDY 01 · COMMERCE</span>
+              <span className="text-xs text-violet-400 tracking-widest">CASE STUDY 01 · COMMERCE AI OPS</span>
               <h2
                 className="mt-3 text-white font-black"
                 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.04em", lineHeight: 0.95 }}
               >
-                커머스 운영을
-                <br />자동화하는 에이전트
+                커머스 운영 자동화를 위한
+                <br />AI 에이전트 시스템 구축
               </h2>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.5 }}
-              className="text-zinc-500 text-sm leading-relaxed max-w-sm"
+              className="text-zinc-400 text-sm leading-relaxed max-w-xl"
             >
-              멀티 채널 정산, 광고 최적화, 이상 거래 탐지를 하나의 에이전트 시스템으로 묶었습니다.
-              데이터 파이프라인부터 LLM 오케스트레이션까지 엔드-투-엔드로 설계·구축했습니다.
+              뭉클랩은 멀티 채널 정산, 광고 최적화, 이상 거래 탐지처럼 서로 다른 운영 흐름을
+              하나의 에이전트 시스템으로 묶어 설계합니다. 데이터 파이프라인부터 LLM 오케스트레이션,
+              승인 워크플로우까지 엔드-투-엔드로 연결하는 방식에 강점이 있습니다.
             </motion.p>
+            <motion.ul
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.22, duration: 0.5 }}
+              className="space-y-3"
+            >
+              {outcomes.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-zinc-500 leading-relaxed max-w-xl">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.25, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="flex flex-wrap gap-3 text-xs tracking-widest text-zinc-500"
+            >
+              <span>AUTOMATION</span>
+              <span>·</span>
+              <span>HUMAN-IN-THE-LOOP</span>
+              <span>·</span>
+              <span>OBSERVABILITY</span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.35, duration: 0.5 }}
             >
               <a
                 href="#contact"
@@ -68,17 +98,13 @@ export default function JangsawangSection() {
             </motion.div>
           </div>
 
-          {/* Right: agent mock */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="w-full"
           >
-            <div
-              className="w-full"
-              style={{ background: "#0D0D0D", border: "1px solid rgba(255,255,255,0.1)" }}
-            >
+            <div className="w-full" style={{ background: "#0D0D0D", border: "1px solid rgba(255,255,255,0.1)" }}>
               <div
                 className="flex items-center gap-2 px-4 py-3"
                 style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
@@ -114,8 +140,8 @@ export default function JangsawangSection() {
                 </div>
                 <div className="space-y-1.5">
                   <div className="text-zinc-600 text-[10px] tracking-widest">NEXT ACTIONS</div>
-                  {["정산 리포트 합성", "CS 인입 자동 분류", "SKU 품절 경보"].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-zinc-500">
+                  {["정산 리포트 합성", "CS 인입 자동 분류", "SKU 품절 경보"].map((item) => (
+                    <div key={item} className="flex items-center gap-2 text-zinc-500">
                       <div className="w-1 h-1 rounded-full bg-zinc-700" />
                       {item}
                     </div>

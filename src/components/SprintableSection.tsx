@@ -50,7 +50,6 @@ export default function SprintableSection() {
       style={{ background: "#0D0D0D", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left: Code editor */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -64,7 +63,6 @@ export default function SprintableSection() {
               border: "1px solid rgba(255,255,255,0.1)",
             }}
           >
-            {/* Editor header */}
             <div
               className="flex items-center gap-2 px-4 py-3"
               style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
@@ -77,11 +75,12 @@ export default function SprintableSection() {
               <span className="ml-2 text-zinc-600 text-[10px] tracking-wide">engineering_agent.ts</span>
             </div>
 
-            {/* Code */}
             <div className="p-5 space-y-0.5">
               {codeLines.map((line, i) => (
-                <div key={i} className="flex">
-                  <span className="w-6 text-zinc-700 text-[10px] select-none shrink-0 pt-0.5">{line.type !== "blank" ? i + 1 : ""}</span>
+                <div key={`${line.type}-${i}`} className="flex">
+                  <span className="w-6 text-zinc-700 text-[10px] select-none shrink-0 pt-0.5">
+                    {line.type !== "blank" ? i + 1 : ""}
+                  </span>
                   <span style={{ color: typeColors[line.type] }} className="leading-relaxed">
                     {line.text || "\u00A0"}
                   </span>
@@ -91,7 +90,6 @@ export default function SprintableSection() {
           </div>
         </motion.div>
 
-        {/* Right: description */}
         <div className="order-1 lg:order-2 space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,14 +97,14 @@ export default function SprintableSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs text-violet-400 tracking-widest">CASE STUDY 02 · INTERNAL PLATFORM</span>
+              <span className="text-xs text-violet-400 tracking-widest">CASE STUDY 02 · INTERNAL AI PLATFORM</span>
             </div>
             <h2
               className="text-white font-black"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.04em", lineHeight: 0.95 }}
             >
-              엔지니어링 팀을
-              <br />증폭시키는 에이전트
+              엔지니어링 팀을 위한
+              <br />LLM·MCP 내부 업무 자동화
             </h2>
           </motion.div>
 
@@ -114,10 +112,11 @@ export default function SprintableSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.15, duration: 0.5 }}
-            className="text-zinc-500 text-sm leading-relaxed"
+            className="text-zinc-400 text-sm leading-relaxed"
           >
-            MCP 기반 에이전트가 GitHub, 이슈 트래커, 문서 시스템을 직접 조작합니다.
-            스펙 설계·PR 리뷰·스탠드업까지 반복 업무를 줄이고 엔지니어가 설계에 집중하게 합니다.
+            MCP 기반 에이전트가 GitHub, 이슈 트래커, 문서 시스템을 직접 조작하며 스펙 설계,
+            PR 리뷰, 스탠드업 같은 반복 업무를 자동화합니다. 뭉클랩은 AI가 실제 개발 흐름 안에서
+            안전하게 동작하도록 평가 체계와 운영 가드레일까지 함께 설계합니다.
           </motion.p>
 
           <motion.div
@@ -126,13 +125,23 @@ export default function SprintableSection() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="space-y-2"
           >
-            {features.map((feature, i) => (
-              <div key={i} className="flex items-center gap-3 text-sm text-zinc-400">
+            {features.map((feature) => (
+              <div key={feature} className="flex items-center gap-3 text-sm text-zinc-400">
                 <div className="w-1 h-1 rounded-full bg-violet-500 shrink-0" />
                 {feature}
               </div>
             ))}
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.26, duration: 0.5 }}
+            className="text-sm text-zinc-500 leading-relaxed"
+          >
+            온프레미스 배포, 권한 제어, 회귀 테스트, 관측성 파이프라인처럼 엔터프라이즈 환경에서
+            중요한 조건을 함께 다루는 것이 핵심입니다.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
