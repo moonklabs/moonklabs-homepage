@@ -42,3 +42,6 @@ next-env.d.ts
 
 # oh-my-claudecode internal state
 .omc/
+
+# oh-my-codex runtime state
+.omx/
