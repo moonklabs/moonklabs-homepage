@@ -24,8 +24,8 @@ export default function CTASection() {
               className="font-black text-black"
               style={{ fontSize: "clamp(3rem, 7vw, 6rem)", letterSpacing: "-0.04em", lineHeight: 0.95 }}
             >
-              함께 만들
-              <br />준비가 되셨나요.
+              귀사의 업무에도
+              <br />Agent 자동화를 붙여보세요.
             </motion.h2>
           </div>
           <div className="space-y-8">
@@ -33,9 +33,10 @@ export default function CTASection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.5 }}
-              className="text-zinc-500 text-base"
+              className="text-zinc-500 text-base leading-relaxed"
             >
-              중견·대기업·투자사 파트너를 환영합니다.
+              Sprintable과 Sellerking으로 검증한 방식으로, 엔터프라이즈와 성장 기업의 반복 업무를 AI Agent
+              자동화로 전환할 수 있도록 함께 설계합니다.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -44,10 +45,10 @@ export default function CTASection() {
               className="flex flex-wrap gap-3"
             >
               <a
-                href="mailto:hello@moonklabs.com?subject=%EB%AD%89%ED%81%B4%EB%9E%A9%20%EB%AC%B8%EC%9D%98&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%EB%AD%89%ED%81%B4%EB%9E%A9%EC%97%90%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.%0A%0A%EC%86%8C%EC%86%8D%3A%20%0A%EC%9D%B4%EB%A6%84%3A%20%0A%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95%3A%20%EB%8C%80%EA%B8%B0%EC%97%85%2F%EC%A4%91%EA%B2%AC%2F%ED%88%AC%EC%9E%90%EC%82%AC%2F%EA%B8%B0%ED%83%80%0A%EB%82%B4%EC%9A%A9%3A%20"
+                href="mailto:hello@moonklabs.com?subject=%EB%AD%89%ED%81%B4%EB%9E%A9%20Agent%20Automation%20%EB%AC%B8%EC%9D%98&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20Agent%20%EC%9E%90%EB%8F%99%ED%99%94%20%EB%8F%84%EC%9E%85%20%EC%83%81%EB%8B%B4%EC%9D%84%20%EC%9B%90%ED%95%A9%EB%8B%88%EB%8B%A4.%0A%0A%ED%9A%8C%EC%82%AC%EB%AA%85%3A%20%0A%EC%97%85%EB%AC%B4%20%EC%A1%B0%EC%A7%81%3A%20%0A%EA%B4%80%EC%8B%AC%20%EC%98%81%EC%97%AD%3A%20Sprintable%20%2F%20Sellerking%20%EA%B4%91%EA%B3%A0%20Agent%20%2F%20Sellerking%20%EC%9E%AC%EA%B3%A0%20Agent%20%2F%20%EA%B8%B0%EC%97%85%20%EB%A7%9E%EC%B6%A4%20Agent%20%EC%9E%90%EB%8F%99%ED%99%94%0A%ED%98%84%EC%9E%AC%20%EA%B3%BC%EC%A0%9C%3A%20"
                 className="px-8 py-4 text-sm font-medium tracking-wide text-white bg-black hover:bg-zinc-800 transition-colors"
               >
-                문의 메일 보내기 →
+                도입 상담 메일 보내기 →
               </a>
               <a
                 href="https://github.com/moonklabs"
@@ -64,7 +65,7 @@ export default function CTASection() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-xs text-zinc-400 tracking-wide"
             >
-              ↳ 보통 1영업일 이내 회신드립니다 · hello@moonklabs.com
+              ↳ 보통 1영업일 이내 회신드립니다 · Sprintable / Sellerking / 기업 맞춤 Agent 자동화 상담 가능
             </motion.p>
           </div>
         </div>
