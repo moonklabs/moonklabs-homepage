@@ -44,7 +44,7 @@ export default function CTASection() {
               className="flex flex-wrap gap-3"
             >
               <a
-                href="mailto:hello@moonklabs.io?subject=%EB%AD%89%ED%81%B4%EB%9E%A9%20%EB%AC%B8%EC%9D%98&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%EB%AD%89%ED%81%B4%EB%9E%A9%EC%97%90%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.%0A%0A%EC%86%8C%EC%86%8D%3A%20%0A%EC%9D%B4%EB%A6%84%3A%20%0A%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95%3A%20%EB%8C%80%EA%B8%B0%EC%97%85%2F%EC%A4%91%EA%B2%AC%2F%ED%88%AC%EC%9E%90%EC%82%AC%2F%EA%B8%B0%ED%83%80%0A%EB%82%B4%EC%9A%A9%3A%20"
+                href="mailto:hello@moonklabs.com?subject=%EB%AD%89%ED%81%B4%EB%9E%A9%20%EB%AC%B8%EC%9D%98&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%EB%AD%89%ED%81%B4%EB%9E%A9%EC%97%90%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.%0A%0A%EC%86%8C%EC%86%8D%3A%20%0A%EC%9D%B4%EB%A6%84%3A%20%0A%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95%3A%20%EB%8C%80%EA%B8%B0%EC%97%85%2F%EC%A4%91%EA%B2%AC%2F%ED%88%AC%EC%9E%90%EC%82%AC%2F%EA%B8%B0%ED%83%80%0A%EB%82%B4%EC%9A%A9%3A%20"
                 className="px-8 py-4 text-sm font-medium tracking-wide text-white bg-black hover:bg-zinc-800 transition-colors"
               >
                 문의 메일 보내기 →
@@ -64,7 +64,7 @@ export default function CTASection() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-xs text-zinc-400 tracking-wide"
             >
-              ↳ 보통 1영업일 이내 회신드립니다 · hello@moonklabs.io
+              ↳ 보통 1영업일 이내 회신드립니다 · hello@moonklabs.com
             </motion.p>
           </div>
         </div>

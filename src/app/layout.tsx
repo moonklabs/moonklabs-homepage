@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moonklabs.io"),
+  metadataBase: new URL("https://moonklabs.com"),
   title: {
     default: "뭉클랩 — AI 네이티브 엔지니어링 스튜디오",
     template: "%s — 뭉클랩",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://moonklabs.io",
+    url: "https://moonklabs.com",
     siteName: "뭉클랩",
     title: "뭉클랩 — AI 네이티브 엔지니어링 스튜디오",
     description:
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "에이전트 시대의 프로덕트를 설계하고 구축합니다.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://moonklabs.io" },
+  alternates: { canonical: "https://moonklabs.com" },
 };
 
 export const viewport = {

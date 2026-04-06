@@ -11,7 +11,7 @@ export default function Footer() {
             { label: "TECH", href: "#tech" },
             { label: "CONTACT", href: "#contact" },
             { label: "GITHUB", href: "https://github.com/moonklabs" },
-            { label: "MAIL", href: "mailto:hello@moonklabs.io" },
+            { label: "MAIL", href: "mailto:hello@moonklabs.com" },
           ].map((link) => (
             <a
               key={link.label}
