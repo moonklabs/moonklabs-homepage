@@ -1,0 +1,148 @@
+<svg width="840" height="545" viewBox="0 0 840 545" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1565c0"/>
+    </marker>
+    <marker id="arr-orange" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e65100"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6a1b9a"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#546e7a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="840" height="545" fill="#eceff1"/>
+
+  <!-- Title -->
+  <text x="420" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#263238">Sprintable System Architecture</text>
+  <line x1="100" y1="46" x2="740" y2="46" stroke="#b0bec5" stroke-width="1"/>
+
+  <!-- ===== SECTION 1: 개인 AI 도구 ===== -->
+  <rect x="20" y="60" width="190" height="262" fill="white" rx="10" stroke="#e0e0e0" stroke-width="1.5"/>
+  <rect x="20" y="60" width="190" height="34" fill="#1976d2" rx="10"/>
+  <rect x="20" y="80" width="190" height="14" fill="#1976d2"/>
+  <text x="115" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="white">① 개인 AI 도구</text>
+
+  <rect x="32" y="107" width="166" height="46" fill="#e3f2fd" rx="7"/>
+  <text x="115" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0d47a1">Claude Code</text>
+  <text x="115" y="144" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64b5f6">Anthropic CLI</text>
+
+  <rect x="32" y="161" width="166" height="46" fill="#e3f2fd" rx="7"/>
+  <text x="115" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0d47a1">Codex</text>
+  <text x="115" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64b5f6">OpenAI CLI</text>
+
+  <rect x="32" y="215" width="166" height="46" fill="#e3f2fd" rx="7"/>
+  <text x="115" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0d47a1">OpenClaw</text>
+  <text x="115" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64b5f6">Custom Agent</text>
+
+  <rect x="32" y="269" width="166" height="46" fill="#e3f2fd" rx="7"/>
+  <text x="115" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0d47a1">Hermes</text>
+  <text x="115" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64b5f6">Custom Agent</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="210" y1="191" x2="258" y2="191" stroke="#1976d2" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="234" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1976d2">등록</text>
+
+  <!-- ===== SECTION 2: Sprintable Core ===== -->
+  <rect x="263" y="60" width="200" height="262" fill="white" rx="10" stroke="#e0e0e0" stroke-width="1.5"/>
+  <rect x="263" y="60" width="200" height="34" fill="#f57c00" rx="10"/>
+  <rect x="263" y="80" width="200" height="14" fill="#f57c00"/>
+  <text x="363" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="white">② Sprintable Core</text>
+
+  <text x="363" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#bf360c">Agent Registry</text>
+
+  <rect x="278" y="124" width="83" height="40" fill="#fff3e0" rx="7" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="319" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e65100">Agent A</text>
+
+  <rect x="372" y="124" width="78" height="40" fill="#fff3e0" rx="7" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="411" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e65100">Agent B</text>
+
+  <rect x="278" y="176" width="83" height="40" fill="#fff3e0" rx="7" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="319" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e65100">Agent C</text>
+
+  <rect x="372" y="176" width="78" height="40" fill="#fff3e0" rx="7" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="411" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e65100">Agent D</text>
+
+  <!-- inter-agent flow arrows -->
+  <line x1="361" y1="144" x2="372" y2="144" stroke="#ffb74d" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+  <line x1="319" y1="164" x2="319" y2="176" stroke="#ffb74d" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+  <line x1="411" y1="164" x2="411" y2="176" stroke="#ffb74d" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+
+  <rect x="278" y="230" width="172" height="26" fill="#fff8e1" rx="5"/>
+  <text x="364" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f57c00">업무 위임 &amp; 협업 조율</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="463" y1="191" x2="511" y2="191" stroke="#f57c00" stroke-width="2.5" marker-end="url(#arr-orange)"/>
+  <text x="487" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f57c00">연결</text>
+
+  <!-- ===== SECTION 3: 메시징 플랫폼 ===== -->
+  <rect x="516" y="60" width="197" height="262" fill="white" rx="10" stroke="#e0e0e0" stroke-width="1.5"/>
+  <rect x="516" y="60" width="197" height="34" fill="#388e3c" rx="10"/>
+  <rect x="516" y="80" width="197" height="14" fill="#388e3c"/>
+  <text x="614" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="white">③ 메시징 플랫폼</text>
+
+  <rect x="530" y="107" width="169" height="56" fill="#f3e5f5" rx="7"/>
+  <rect x="530" y="107" width="6" height="56" fill="#4a154b" rx="3"/>
+  <text x="622" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#4a154b">Slack</text>
+  <text x="622" y="151" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7b1fa2">업무 채널 통합</text>
+
+  <rect x="530" y="171" width="169" height="56" fill="#e3f2fd" rx="7"/>
+  <rect x="530" y="171" width="6" height="56" fill="#0088cc" rx="3"/>
+  <text x="622" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#0088cc">Telegram</text>
+  <text x="622" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#039be5">Bot &amp; 알림</text>
+
+  <rect x="530" y="235" width="169" height="56" fill="#ede7f6" rx="7"/>
+  <rect x="530" y="235" width="6" height="56" fill="#5865f2" rx="3"/>
+  <text x="622" y="261" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#5865f2">Discord</text>
+  <text x="622" y="279" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7e57c2">커뮤니티 허브</text>
+
+  <!-- ===== SECTION 4: Memo Webhook ===== -->
+  <rect x="263" y="350" width="200" height="76" fill="white" rx="10" stroke="#e0e0e0" stroke-width="1.5"/>
+  <rect x="263" y="350" width="200" height="32" fill="#6a1b9a" rx="10"/>
+  <rect x="263" y="368" width="200" height="14" fill="#6a1b9a"/>
+  <text x="363" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="white">④ Memo Webhook</text>
+  <text x="363" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">Agent 트리거 &amp; 명령 전달</text>
+
+  <!-- Memo ↔ Sprintable arrows (gap: y=322 to y=350) -->
+  <line x1="353" y1="322" x2="353" y2="350" stroke="#6a1b9a" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#arr-purple)"/>
+  <line x1="373" y1="350" x2="373" y2="322" stroke="#6a1b9a" stroke-width="1.8" marker-end="url(#arr-purple)"/>
+  <text x="398" y="340" font-family="Arial, sans-serif" font-size="9" fill="#6a1b9a">트리거</text>
+
+  <!-- Memo → Workflow connector -->
+  <line x1="363" y1="426" x2="363" y2="456" stroke="#90a4ae" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-gray)"/>
+
+  <!-- ===== SECTION 5: 상호 업무 Flow ===== -->
+  <rect x="20" y="456" width="800" height="74" fill="white" rx="10" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="7,4"/>
+  <text x="420" y="479" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#37474f">⑤ 상호 업무 Flow — Agents Orchestration</text>
+
+  <rect x="40" y="488" width="65" height="22" fill="#e3f2fd" rx="4" stroke="#90caf9"/>
+  <text x="72" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Agent A</text>
+  <line x1="105" y1="499" x2="128" y2="499" stroke="#90caf9" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+  <rect x="128" y="488" width="65" height="22" fill="#fff3e0" rx="4" stroke="#ffb74d"/>
+  <text x="160" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e65100">Agent B</text>
+  <line x1="193" y1="499" x2="216" y2="499" stroke="#ffb74d" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+  <rect x="216" y="488" width="65" height="22" fill="#e8f5e9" rx="4" stroke="#a5d6a7"/>
+  <text x="248" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#388e3c">Agent C</text>
+  <line x1="281" y1="499" x2="304" y2="499" stroke="#a5d6a7" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+  <rect x="304" y="488" width="65" height="22" fill="#ede7f6" rx="4" stroke="#ce93d8"/>
+  <text x="336" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">Agent D</text>
+  <line x1="369" y1="499" x2="392" y2="499" stroke="#ce93d8" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+  <text x="422" y="504" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#b0bec5">· · ·</text>
+  <line x1="452" y1="499" x2="475" y2="499" stroke="#b0bec5" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+  <rect x="475" y="488" width="110" height="22" fill="#e8f5e9" rx="4" stroke="#81c784"/>
+  <text x="530" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2e7d32">결과 검토 &amp; 전달</text>
+  <line x1="585" y1="499" x2="608" y2="499" stroke="#81c784" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+  <rect x="608" y="488" width="100" height="22" fill="#fff9c4" rx="4" stroke="#f9a825"/>
+  <text x="658" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f57f17">완료 &amp; 알림</text>
+
+</svg>
